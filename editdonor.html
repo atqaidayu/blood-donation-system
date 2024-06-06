@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Donor Profile</title>
+    <link rel="stylesheet" href="editdonor_styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Donors</a></li>
+                <li><a href="#">Blood Donation</a></li>
+                <li><a href="#">Event</a></li>
+                <li><a href="#">Staff Profile</a></li>
+            </ul>
+        </nav>
+        <div class="profile">
+            <img src="profile.png" alt="Staff Name">
+            <span>Staff Name</span>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <form class="edit-profile">
+                <h2>Edit donor profile</h2>
+                
+                <div class="input-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" value="Name" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="ic-number">IC Number</label>
+                    <input type="text" id="ic-number" name="ic-number" value="IC Number" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" value="26" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="gender">Gender</label>
+                    <input type="text" id="gender" name="gender" value="Gender" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address" rows="3" required>Address</textarea>
+                </div>
+
+                <div class="input-group">
+                    <label for="phone-number">Phone number</label>
+                    <input type="tel" id="phone-number" name="phone-number" value="Phone number" required>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="cancel">Cancel</button>
+                    <button type="submit" class="update">Update Profile</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

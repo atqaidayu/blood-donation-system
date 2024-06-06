@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+body {
+    background-color: #ff6f61;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #ff6f61;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+header .logo img {
+    max-height: 30px;
+    width: auto;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+nav ul li a.active {
+    font-weight: bold;
+    background-color: white;
+    color: #ff6f61;
+}
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #ffd700;
+}
+.profile span {
+    color: white;
+}
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+.container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+.edit-event-form h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+.input-group {
+    margin-bottom: 20px;
+}
+.input-group-row {
+    display: flex;
+    gap: 20px;
+}
+.input-group-row .input-group {
+    flex: 1;
+}
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: #999;
+}
+.input-group textarea {
+    resize: vertical;
+}
+.input-group input[type="file"] {
+    padding: 8px;
+    font-size: 14px;
+}
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button.cancel {
+    background-color: #ccc;
+    color: #333;
+}
+button.update {
+    background-color: #ffd700;
+    color: #333;
+}
+button:hover {
+    opacity: 0.9;
+}
+button.cancel:hover {
+    background-color: #bbb;
+}
+button.update:hover {
+    background-color: #ffcc00;
+}
