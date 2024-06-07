@@ -62,7 +62,7 @@ nav ul li a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('alert-image.png');
+    background-image: url('assets/images/alert-image.png');
     background-size: auto;
     background-repeat: no-repeat;
     background-position: right center;
