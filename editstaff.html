@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Profile</title>
+    <link rel="stylesheet" href="editstaff_styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#">Donors</a></li>
+                <li><a href="#">Blood Donation</a></li>
+                <li><a href="#">Event</a></li>
+                <li><a href="#" class="active">Staff Profile</a></li>
+            </ul>
+            <div class="profile-summary">
+                <div class="profile-image">
+                    <img src="profile-placeholder.png" alt="Profile">
+                </div>
+                <div class="profile-info">
+                    <p class="profile-name">Staff Name</p>
+                    <p class="profile-role">Staff Role</p>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="profile-section">
+            <h1>Staff Profile</h1>
+            <div class="profile-form">
+
+                <div class="profile-image-large">
+                    <div class="image-container">
+                        <img src="user-placeholder.png" alt="User" id="profile-pic">
+                        <div class="camera-icon">
+                            <label for="upload-photo">
+                                <img src="camera-icon.png" alt="Camera Icon">
+                            </label>
+                            <input type="file" id="upload-photo" accept="image/*" style="display: none;">
+                        </div>
+                    </div>
+                </div>
+
+                <form>
+                    <div class="form-group">
+                        <label for="staff-name">Staff Name</label>
+                        <input type="text" id="staff-name" name="staff-name" placeholder="Staff Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="staff-role">Staff Role</label>
+                        <input type="text" id="staff-role" name="staff-role" placeholder="Staff Role">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" placeholder="Username">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Password">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Email">
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="cancel-btn">Cancel</button>
+                        <button type="submit" class="save-btn">Save profile</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('upload-photo').addEventListener('change', function(event) {
+            const reader = new FileReader();
+            reader.onload = function(){
+                const output = document.getElementById('profile-pic');
+                output.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        });
+    </script>
+</body>
+</html>
