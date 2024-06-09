@@ -1,0 +1,231 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #ff6f61;
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #ff6f61;
+}
+
+header .logo img {
+    max-height: 150px;
+    width: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile span {
+    color: white;
+    text-align: right;
+    font-size: 14px;
+}
+
+
+main {
+    padding: 3rem 2rem;
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.profile-section {
+    text-align: center;
+}
+
+.profile-section h1 {
+    margin-bottom: 2rem;
+    color: #e76e6e;
+}
+
+.profile-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.profile-image-large {
+    flex-basis: 30%;
+}
+
+.image-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background: #e76e6e;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100px;
+    height: auto;
+}
+
+.camera-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #fff;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.camera-icon img {
+    width: 20px;
+    height: 20px;
+}
+
+form {
+    flex-basis: 65%;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+form input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-actions {
+    text-align: right;
+}
+
+.cancel-btn,
+.save-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.cancel-btn {
+    background: #ccc;
+    color: #333;
+    margin-right: 1rem;
+}
+
+.save-btn {
+    background: #e76e6e;
+    color: #fff;
+}
+
+.custom-profile-image-large {
+    flex-basis: 30%;
+}
+
+.custom-image-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background: #e76e6e;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.custom-image-container img#profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.custom-camera-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #fff;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.custom-camera-icon img {
+    width: 20px;
+    height: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #ffd700;
+    border-radius: 5px;
+}
+
+nav ul li a.active {
+    background-color: #ffd700;
+    color: #b00;
+    border-radius: 5px;
+}

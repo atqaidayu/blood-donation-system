@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #ff6f61;
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #ff6f61;
+}
+
+header .logo img {
+    max-height: 150px;
+    width: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile span {
+    color: white;
+    text-align: right;
+    font-size: 14px;
+}
+
+main {
+    padding: 50px;
+    text-align: center;
+}
+
+.dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header h1 {
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.charts {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+    align-items: flex-start;
+}
+
+.bar-chart {
+    width: 50%;
+    background: white;
+    padding: 10px;
+    margin-right: 30px;
+    border-radius: 10px;
+}
+
+.right-section {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+.pie-chart {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-right: 30px;
+}
+
+.info-container {
+    margin-top: 30px;
+    padding: 20px;
+    background: #ffd700;
+    color: #b00;
+    border-radius: 10px;
+}
+
+.location, .current-donors {
+    margin-bottom: 20px;
+}
+
+.current-donors .donor-count {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.current-donors .donor-count span {
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #ffd700;
+    border-radius: 5px;
+}
+
+nav ul li a.active {
+    background-color: #ffd700;
+    color: #b00;
+    border-radius: 5px;
+}

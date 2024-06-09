@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation Form</title>
+    <link rel="stylesheet" href="assets/css/donationform_styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/images/logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="homepage-admin.html" class="nav-link">Dashboard</a></li>
+                <li><a href="donorlist.html" class="nav-link">Donors</a></li>
+                <li><a href="donation-form.html" class="nav-link">Blood Donation</a></li>
+                <li><a href="manageevent.html" class="nav-link">Event</a></li>
+                <li><a href="edit-staff.html" class="nav-link">Staff Profile</a></li>
+            </ul>
+        </nav>
+        <div class="profile">
+            <img src="assets/images/staff.jpeg" alt="Staff Name">
+            <span>Staff Name<br>Staff Role</span>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <form class="donation-form">
+                <h2>Donation Form</h2>
+                <p>New donor? <a href="newdonor.html">Register here!</a></p>
+                <label for="ic-number">IC Number</label>
+                <input type="text" id="ic-number" name="ic-number" placeholder="IC Number">
+                <label for="blood-type">Blood Type</label>
+                <select id="blood-type" name="blood-type">
+                    <option value="" disabled selected>Select blood type</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+                <label for="quantity">Quantity (mL)</label>
+                <input type="text" id="quantity" name="quantity" placeholder="Quantity">
+                <label for="description">Description (Optional)</label>
+                <input type="text" id="description" name="description" placeholder="Description">
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn">Cancel</button>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="assets/js/nav-admin.js"></script>
+    <script src="assets/js/donate-form.js"></script>
+</body>
+</html>

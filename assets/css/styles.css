@@ -1,3 +1,4 @@
+/* General styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -19,19 +20,18 @@ body2 {
     height: 100vh;
 }
 
-
 /* Existing header styles */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
+    padding: 0px 20px;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 header .logo img {
-    max-height: 30px; /* Adjust the height as needed */
+    max-height: 150px; /* Adjust the height as needed */
     width: auto;
 }
 
@@ -44,7 +44,16 @@ nav ul {
 nav ul li a {
     text-decoration: none;
     color: #333;
-    font-size: 16px;
+    font-size: 24px; /* Increase font size */
+    padding: 20px 30px; /* Increase padding */
+    border-radius: 10px; /* Adjust border-radius if needed */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a.active,
+nav ul li a:focus {
+    background-color: #cf9f9b; /* Change to desired color */
+    color: white;
 }
 
 .logo2 {
@@ -62,11 +71,11 @@ nav ul li a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('assets/images/alert-image.png');
-    background-size: auto;
+    background-image: url('../images/alert-image.png');
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: right center;
-    max-width: 800px; /* Adjust the width as needed */
+    max-width: 2000px; /* Adjust the width as needed */
     margin: 0 auto;
     border-radius: 10px;
     min-height: 300px; /* Set the desired minimum height */
@@ -74,7 +83,7 @@ nav ul li a {
 
 .alert h1,
 .alert p {
-    color: white;
+    color: rgb(184, 49, 49);
 }
 
 .alert-content {
@@ -85,25 +94,38 @@ nav ul li a {
 }
 
 .alert-text {
-    max-width: 600px;
+    max-width: 1000px;
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
+    padding: 60px;
     border-radius: 10px;
 }
 
 .alert-text .red-alert {
     background-color: #dc3545;
     color: white;
-    padding: 5px 10px;
+    padding: 10px 40px;
     border-radius: 5px;
     font-size: 14px;
+    margin-bottom: 30px;
 }
 
 /* Main section */
 .main {
-    text-align: center;
-    padding: 50px;
+    text-align: left;
+    padding: 30px;
     background-color: white;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.text-stats {
+    display: flex;
+    flex-direction: column;
 }
 
 .main h2 {
@@ -117,29 +139,83 @@ nav ul li a {
 }
 
 .main button {
+    text-align: center;
+    display: content-box; /* or inline */
     background-color: #dc3545;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 10px;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
     margin-bottom: 30px;
+    width: 150px;
 }
 
 .main .stats {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     margin-top: 30px;
 }
 
 .main .stat {
     text-align: center;
+    margin-right: 40px;
 }
 
 .main .stat .number {
     font-size: 36px;
     color: #dc3545;
+}
+
+.image {
+    text-align: center;
+}
+
+.image img {
+    max-width: 70%;
+    height: auto;
+}
+
+/* bank list section */
+.banklist {
+    background-color: #ffffff;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.blood-stock {
+    margin-bottom: 20px;
+}
+
+.table-container {
+    overflow-x: auto; /* Enable horizontal scrolling for the table if necessary */
+    flex: 1;
+    margin-left: 20px; /* Add spacing between the blood stock and table */
+}
+
+.table-container table {
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.table-container table thead {
+    background-color: #f4f4f4;
+}
+
+.table-container table th,
+.table-container table td {
+    padding: 10px; /* Adjust padding for smaller size */
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.table-container table th {
+    font-weight: bold;
 }
 
 /* Events section */
@@ -188,31 +264,31 @@ nav ul li a {
 
 /* Footer styles */
 footer {
-    background-color: #dc3545;
+    background-color: #f08d97;
     color: white;
-    padding: 20px 50px;
+    padding: 3px 20px;
     text-align: center;
 }
 
 footer .footer-content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+    align-items: left;
+    margin-bottom: 5px;
 }
 
 footer .footer-logo img {
-    max-height: 30px; /* Adjust the height as needed */
+    max-height: 150px; /* Adjust the height as needed */
     width: auto;
 }
 
 footer .footer-contact p {
-    margin: 5px 0;
+    margin: 5px 10px;
+    text-align: left;
 }
 
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding-top: 10px;
 }
 
 /* Login page styles */
@@ -250,7 +326,7 @@ footer .footer-contact p {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 0px;
 }
 
 .login-box {
@@ -319,3 +395,148 @@ button:hover {
 .help-text a:hover {
     text-decoration: underline;
 }
+
+/* Additional styles for blood stock and table layout */
+.main-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.about-us{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #ffffff;
+    font-size: 36px !important;
+    text-align: center !important;
+}
+
+.faq{
+    background-color: #ffffff;
+    text-align: left !important;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+.left-content {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.left-content .text-stats {
+    text-align: center;
+}
+
+.left-content .text-stats h2 {
+    margin-bottom: 20px;
+}
+
+.left-content .pie-chart img {
+    width: 100%;
+    max-width: 300px;
+}
+
+.right-content {
+    flex: 1;
+}
+
+.right-content .banklist {
+    text-align: center;
+}
+
+.right-content .banklist h1 {
+    margin-bottom: 20px;
+}
+
+.right-content .search-bar {
+    margin-bottom: 20px;
+}
+
+.right-content .search-bar input {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.right-content .table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.right-content .table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.right-content .table-container table th,
+.right-content .table-container table td {
+    border: 1px solid #d5d1d1;
+    padding: 8px;
+    text-align: left;
+}
+
+.right-content .table-container table th {
+    background-color: #dfcece;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+  
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .text {font-size: 11px}
+  }
