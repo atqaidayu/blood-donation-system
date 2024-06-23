@@ -66,17 +66,22 @@ main {
 
 .profile-section {
     text-align: center;
+    justify-content: center;
+    align-items: center; 
 }
 
 .profile-section h1 {
     margin-bottom: 2rem;
     color: #e76e6e;
+    justify-content: center;
+    align-items: center; 
 }
 
 .profile-form {
-    display: flex;
+    display: center;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
+    
 }
 
 .profile-image-large {
@@ -161,44 +166,6 @@ form input {
 .save-btn {
     background: #e76e6e;
     color: #fff;
-}
-
-.custom-profile-image-large {
-    flex-basis: 30%;
-}
-
-.custom-image-container {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    background: #e76e6e;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-.custom-image-container img#profile-pic {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-}
-
-.custom-camera-icon {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    background: #fff;
-    border-radius: 50%;
-    padding: 5px;
-    cursor: pointer;
-}
-
-.custom-camera-icon img {
-    width: 20px;
-    height: 20px;
 }
 
 nav ul {

@@ -4,30 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add New Event</title>
-    <link rel="stylesheet" href="addevent_styles.css">
+    <link rel="stylesheet" href="assets/css/addevent_styles.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="logo.png" alt="Logo">
+            <img src="assets/images/logo.png" alt="Logo">
         </div>
         <nav>
             <ul>
-                <li><a href="#">Donors</a></li>
-                <li><a href="#">Blood Donation</a></li>
-                <li><a href="#" class="active">Event</a></li>
-                <li><a href="#">Staff Profile</a></li>
+                <li><a href="homepage-admin.html" class="nav-link">Dashboard</a></li>
+                <li><a href="donorlist.html" class="nav-link">Donors</a></li>
+                <li><a href="donation-form.html" class="nav-link">Blood Donation</a></li>
+                <li><a href="manageevent.html" class="nav-link">Event</a></li>
+                <li><a href="edit-staff.html" class="nav-link">Staff Profile</a></li>
             </ul>
         </nav>
         <div class="profile">
-            <img src="profile.png" alt="Staff Name">
-            <span>Staff Name</span>
+            <img src="assets/images/staff.jpeg" alt="Staff Name">
         </div>
     </header>
 
     <main>
         <div class="container">
-            <form class="add-event-form">
+            <form class="add-event-form" action="create_event.php" method="post" enctype="multipart/form-data">
                 <h2>Add New Event</h2>
 
                 <div class="input-group">
@@ -68,5 +68,7 @@
             </form>
         </div>
     </main>
+    <script src="assets/js/nav-admin.js"></script>
+    <script src="assets/js/donate-form.js"></script>
 </body>
 </html>

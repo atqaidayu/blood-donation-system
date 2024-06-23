@@ -5,12 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Staff Profile</title>
     <link rel="stylesheet" href="assets/css/editstaff_styles.css">
+
     <style>
-        .form-group {
-            margin-bottom: 15px;
+        /* Add your custom styles for the logout button here */
+        .logout-btn {
+            background-color: yellow;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            color: black;
+            border-radius: 5px;
+            margin-left: 20px;
         }
-        .form-actions {
-            margin-top: 20px;
+
+        .logout-btn:hover {
+            background-color: #ffd700;
         }
     </style>
 </head>
@@ -30,118 +40,79 @@
         </nav>
         <div class="profile">
             <img src="assets/images/staff.jpeg" alt="Staff Name">
-            <span>Staff Name<br>Staff Role</span>
         </div>
     </header>
-
     <main>
         <section class="profile-section">
             <h1>Staff Profile</h1>
+            <form action="logout.php" method="post" style="display:inline;">
+                <button type="submit" class="logout-btn">Logout</button>
+            </form>
             <div class="profile-form">
+              
 
-                <div class="custom-profile-image-large">
-                    <div class="custom-image-container">
-                        <img src="assets/images/staff.jpeg" alt="Staff Image" id="profile-pic">
-                    </div>
-                </div>
-
-                <form id="staff-form">
+                <form action="update_staff.php" method="post">
                     <div class="form-group">
                         <label for="staff-name">Staff Name</label>
                         <input type="text" id="staff-name" name="staff-name" placeholder="Staff Name">
-                        <div class="error" id="staff-name-error"></div>
                     </div>
-            
+
                     <div class="form-group">
                         <label for="staff-role">Staff Role</label>
                         <input type="text" id="staff-role" name="staff-role" placeholder="Staff Role">
-                        <div class="error" id="staff-role-error"></div>
                     </div>
-            
+
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input type="text" id="username" name="username" placeholder="Username">
-                        <div class="error" id="username-error"></div>
                     </div>
-            
+
                     <div class="form-group">
                         <label for="password">Password</label>
                         <input type="password" id="password" name="password" placeholder="Password">
-                        <div class="error" id="password-error"></div>
                     </div>
-            
+
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" placeholder="Email">
-                        <div class="error" id="email-error"></div>
                     </div>
-            
+
                     <div class="form-actions">
                         <button type="button" class="cancel-btn">Cancel</button>
                         <button type="submit" class="save-btn">Save profile</button>
                     </div>
+
+                  
                 </form>
             </div>
         </section>
     </main>
+
     <script>
-         document.getElementById('staff-form').addEventListener('submit', function(event) {
-            // Prevent form submission
-            event.preventDefault();
-            
-            // Get form values
-            const staffName = document.getElementById('staff-name').value.trim();
-            const staffRole = document.getElementById('staff-role').value.trim();
-            const username = document.getElementById('username').value.trim();
-            const password = document.getElementById('password').value;
-            const email = document.getElementById('email').value.trim();
-            
-            let isValid = true;
-            let errorMessage = 'Please fill in this form:\n';
-            
-            // Validate each field
-            if (!staffName) {
-                errorMessage += '- Staff name is required\n';
-                isValid = false;
-            }
-            
-            if (!staffRole) {
-                errorMessage += '- Staff role is required\n';
-                isValid = false;
-            }
-            
-            if (!username) {
-                errorMessage += '- Username is required\n';
-                isValid = false;
-            }
-            
-            if (!password) {
-                errorMessage += '- Password is required\n';
-                isValid = false;
-            } else if (password.length < 8) {
-                errorMessage += '- Password must be at least 8 characters\n';
-                isValid = false;
-            }
-            
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!email) {
-                errorMessage += '- Email is required\n';
-                isValid = false;
-            } else if (!emailPattern.test(email)) {
-                errorMessage += '- Email is not valid\n';
-                isValid = false;
-            }
-            
-            // If the form is not valid, display the error message
-            if (!isValid) {
-                alert(errorMessage);
+        
+        document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOMContentLoaded event fired');
+    // Fetch staff data from staff_data.php
+    fetch('staff_data.php')
+        .then(response => response.json())
+        .then(data => {
+            // Check if data contains the necessary properties
+            if (data && data.staffName && data.staffRole && data.staffUsername && data.staffEmail) {
+                // Populate form fields with staff data
+                document.getElementById('staff-name').value = data.staffName;
+                document.getElementById('staff-role').value = data.staffRole;
+                document.getElementById('username').value = data.staffUsername;
+                document.getElementById('password').value = data.staffPassword;
+                document.getElementById('email').value = data.staffEmail;
             } else {
-                alert('Form submitted successfully!');
-                // You can add code here to submit the form data via AJAX or similar
+                console.error('Incomplete data received from server.');
             }
-        });
+        })
+        .catch(error => console.error('Error:', error));
+});
+  
+    
     </script>
-   
-     <script src="assets/js/nav-admin.js"></script>
+    
 </body>
 </html>

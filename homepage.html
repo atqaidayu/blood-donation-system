@@ -39,7 +39,7 @@
             <div class="text-stats">
                 <h2>Blood Donation</h2>
                 <p>Make changes and help the world</p>
-                <button>Donate now!</button>
+                <button id="donate-btn">Donate now!</button>
                 <div class="stats">
                     <div class="stat">
                         <span class="number">21</span>
@@ -63,35 +63,61 @@
 
     
 
-    <section class="events">
+    <section class="events" id="events"> 
         <h2>Upcoming Events</h2>
-        <div class="event-list">
-            <div class="event">
-                <p>Nov 12</p>
-                <h3>Heroes Among Us: Blood Donation Day </h3>
-                <p>Be a hero in someone's life by donating blood. Free t-shirts for all donors and a thank-you lunch provided.</p>
-                <a href="#">Read more</a>
-            </div>
-            <div class="event">
-                <p>Nov 08</p>
-                <h3>Community Health and Blood Donation Fair</h3>
-                <p>A day dedicated to health and wellness with free health screenings, fitness activities, and blood donations.</p>
-                <a href="#">Read more</a>
-            </div>
-            <div class="event">
-                <p>Nov 06</p>
-                <h3>Life Savers' Blood Donation Marathon </h3>
-                <p>Participate in our marathon blood donation event. Enjoy fitness classes, snacks, and a chance to win great prizes.</p>
-                <a href="#">Read more</a>
-            </div>
-            <div class="event">
-                <p>Nov 05</p>
-                <h3> Family Fun Blood Donation Day </h3>
-                <p>Bring the whole family for a day of fun activities and blood donations. Kids' entertainment and family-friendly refreshments available C</p>
-                <a href="#">Read more</a>
-            </div>
+        <div class="event-list" id="event-list">
+            <!-- Events will be loaded here -->
         </div>
     </section>
+
+    <script>
+        // Fetch events from the server
+        fetch('fetch_events.php')
+            .then(response => response.json())
+            .then(events => {
+                const eventList = document.getElementById('event-list');
+
+                // Loop through the events and create HTML elements
+                events.forEach(event => {
+                    const eventDiv = document.createElement('div');
+                    eventDiv.classList.add('event');
+
+                    const dateElement = document.createElement('p');
+                    dateElement.textContent = event.eventDate;
+                    eventDiv.appendChild(dateElement);
+
+                    const titleElement = document.createElement('h3');
+                    titleElement.textContent = event.eventName;
+                    eventDiv.appendChild(titleElement);
+
+                    const descriptionElement = document.createElement('p');
+                    descriptionElement.textContent = event.eventDescription;
+                    eventDiv.appendChild(descriptionElement);
+
+                    const readMoreLink = document.createElement('a');
+                    readMoreLink.href = '#';
+                    readMoreLink.textContent = 'Read more';
+                    eventDiv.appendChild(readMoreLink);
+
+                    const imageElement = document.createElement('img');
+                    imageElement.src = event.eventImage;
+                    imageElement.alt = event.eventName;
+                    eventDiv.appendChild(imageElement);
+
+                    eventList.appendChild(eventDiv);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching events:', error);
+            });
+    </script>
+
+<script>
+    // Scroll to events section when Donate now! button is clicked
+    document.getElementById('donate-btn').addEventListener('click', function() {
+        document.getElementById('events').scrollIntoView({ behavior: 'smooth' });
+    });
+</script>
 
     <footer>
         <div class="footer-content">

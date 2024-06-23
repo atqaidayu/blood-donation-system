@@ -22,18 +22,19 @@
         </nav>
         <div class="profile">
             <img src="assets/images/staff.jpeg" alt="Staff Name">
-            <span>Staff Name<br>Staff Role</span>
         </div>
     </header>
     <main>
         <div class="container">
-            <form class="donation-form">
+            <form class="donation-form" action="submit_form.php" method="POST">
                 <h2>Donation Form</h2>
                 <p>New donor? <a href="newdonor.html">Register here!</a></p>
+                <label for="bank-id">Bank ID</label>
+                <input type="text" id="bank-id" name="bank-id" placeholder="Bank ID" required>
                 <label for="ic-number">IC Number</label>
-                <input type="text" id="ic-number" name="ic-number" placeholder="IC Number">
+                <input type="text" id="ic-number" name="ic-number" placeholder="IC Number" required>
                 <label for="blood-type">Blood Type</label>
-                <select id="blood-type" name="blood-type">
+                <select id="blood-type" name="blood-type" required>
                     <option value="" disabled selected>Select blood type</option>
                     <option value="A+">A+</option>
                     <option value="A-">A-</option>
@@ -45,7 +46,7 @@
                     <option value="O-">O-</option>
                 </select>
                 <label for="quantity">Quantity (mL)</label>
-                <input type="text" id="quantity" name="quantity" placeholder="Quantity">
+                <input type="number" id="quantity" name="quantity" placeholder="Quantity" required>
                 <label for="description">Description (Optional)</label>
                 <input type="text" id="description" name="description" placeholder="Description">
                 <div class="form-actions">
@@ -56,6 +57,40 @@
         </div>
     </main>
     <script src="assets/js/nav-admin.js"></script>
-    <script src="assets/js/donate-form.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('.donation-form');
+            const icNumber = document.getElementById('ic-number');
+            const bloodType = document.getElementById('blood-type');
+            const quantity = document.getElementById('quantity');
+            
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                const icPattern = /^[0-9]{6}-[0-9]{2}-[0-9]{4}$/;
+                const isICValid = icPattern.test(icNumber.value);
+                const isFormComplete = icNumber.value && bloodType.value && quantity.value;
+
+                if (!isICValid) {
+                    alert('Invalid IC Number format. Please use the format: XXXXXX-XX-XXXX.');
+                    return;
+                }
+
+                if (!isFormComplete) {
+                    alert('Please fill out all required fields.');
+                    return;
+                }
+
+                // Allow the form to be submitted if validation passes
+                form.submit();
+                alert('Form successfully submitted!');
+                window.history.back(); 
+            });
+
+            document.querySelector('.cancel-btn').addEventListener('click', function() {
+                form.reset();
+            });
+        });
+    </script>
 </body>
 </html>

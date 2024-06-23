@@ -262,6 +262,14 @@ nav ul li a:focus {
     font-size: 14px;
 }
 
+.event img {
+    width: 100%; /* Make the image fill its container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Match the border radius of the event box */
+    margin-bottom: 10px; /* Optional: Add space below the image */
+}
+
+
 /* Footer styles */
 footer {
     background-color: #f08d97;

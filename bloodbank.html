@@ -8,21 +8,20 @@
 </head>
 <body>
     <header>
+       
         <nav>
             <ul>
-                <ul>
-                    <li><a href="homepage.html">Home</a></li>
-                    <li><a href="bloodbank.html">Blood Bank</a></li>
-                    <li><a href="about-us.html">About us</a></li>
-                    <li><a href="faqs.html">FAQs</a></li>
-                </ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="bloodbank.html">Blood Bank</a></li>
+                <li><a href="about-us.html">About us</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
             </ul>
         </nav>
         <div class="logo">
             <img src="assets/images/logo.png" alt="Logo">
         </div>
     </header>
-
+    
     <section class="main-section">
         <div class="left-content">
             <div class="text-stats">
@@ -49,20 +48,8 @@
                                 <th>Contact Info</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>National Blood Centre (Pusat Darah Negara)</td>
-                                <td>+60 3-2613 2688</td>
-                            </tr>
-                            <tr>
-                                <td>Hospital Kuala Lumpur (HKL)</td>
-                                <td> +60 3-2615 5555</td>
-                            </tr>
-                            <tr>
-                                <td>Hospital Sultanah Aminah </td>
-                                <td>+60 7-225 7000</td>
-                            </tr>
-                            <!-- Repeat the <tr> block for each row -->
+                        <tbody id="bloodBankTable">
+                            <!-- Data will be dynamically inserted here -->
                         </tbody>
                     </table>
                 </div>
@@ -85,5 +72,23 @@
         </div>
     </footer>
     <script src="assets/js/nav.js"></script>
+    <script>
+        // Fetch blood bank data from PHP script
+        fetch('display_blood_banks.php')
+            .then(response => response.json())
+            .then(data => {
+                // Loop through the data and dynamically create table rows
+                const tableBody = document.getElementById('bloodBankTable');
+                data.forEach(bloodBank => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${bloodBank.location}</td>
+                        <td>${bloodBank.contactInfo}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error fetching blood bank data:', error));
+    </script>
 </body>
 </html>
